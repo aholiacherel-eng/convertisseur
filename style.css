@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1cc88a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 40px 35px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    align-items: center;
+}
+
+/* Type selector */
+.type-selector {
+    margin-bottom: 25px;
+}
+
+.type-selector label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#type {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
+}
+
+#type:focus {
+    border-color: #4e73df;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.1);
+}
+
+/* Zone de conversion */
+.conversion-zone {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+    outline: none;
+    background: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.1);
+}
+
+.input-group input[readonly] {
+    background: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Bouton d'échange */
+.btn-echanger {
+    background: #1cc88a;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(28, 200, 138, 0.3);
+}
+
+.btn-echanger:hover {
+    background: #17a673;
+    transform: rotate(180deg);
+    box-shadow: 0 6px 15px rgba(28, 200, 138, 0.5);
+}
+
+.btn-echanger:active {
+    transform: rotate(180deg) scale(0.95);
+}
+
+/* Bouton principal de conversion */
+#btn-convertir {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #4e73df, #2e59d9);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+    margin-bottom: 20px;
+}
+
+#btn-convertir:hover {
+    background: linear-gradient(135deg, #2e59d9, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(78, 115, 223, 0.5);
+}
+
+#btn-convertir:active {
+    transform: translateY(0);
+}
+
+/* Résultat */
+.result {
+    background: #e7f3ff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #4e73df;
+    font-size: 18px;
+    color: #2c3e50;
+    font-weight: 500;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.result:empty {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .conversion-zone {
+        padding: 20px 15px;
+    }
+    
+    .input-group input,
+    .input-group select,
+    #type {
+        font-size: 15px;
+    }
+    
+    #btn-convertir {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+/* Animation d'apparition du résultat */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result {
+    animation: slideDown 0.3s ease;
+}

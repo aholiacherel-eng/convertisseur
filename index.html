@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ADJI AHOLIA WILFRIED CHEREl">
+    <title>Convertisseur d'unités</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Convertisseur Intelligent</h1>
+
+        
+        <div class="type-selector">
+            <label for="type">Type de conversion :</label>
+            <select id="type">
+                <option value="temperature">Température</option>
+                <option value="distance">Distance</option>
+                <option value="devise">Devise</option>
+            </select>
+        </div>
+
+        
+        <div class="conversion-zone">
+            
+            <div class="input-group">
+                <label>De :</label>
+                <input type="number" id="value" placeholder="Entrez une valeur" step="any">
+                <select id="from"></select>
+            </div>
+
+            
+            <button id="btn-echanger" class="btn-echanger">⇄</button>
+
+           
+            <div class="input-group">
+                <label>Vers :</label>
+                <input type="number" id="result-value" placeholder="Résultat" readonly>
+                <select id="to"></select>
+            </div>
+        </div>
+
+        
+        <button id="btn-convertir">Convertir</button>
+
+       
+        <div id="result" class="result"></div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
